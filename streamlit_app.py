@@ -2,7 +2,7 @@
 import streamlit as st
 
 # Logo
-st.image("logo-mMEb.png",width=100)
+st.image("logo-MEb.png",width=100)
 # App title
 st.title("Ophthalmoloquiz App by Matteo C")
 
