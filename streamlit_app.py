@@ -11,6 +11,7 @@ A 28-year-old man presents with progressive vision loss, particularly in low-lig
 """)
 
 # Diagnostic Imaging Findings
+st.image("clinical_case_image.jpg", caption="OCT Imaging of Toxoplasmic Chorioretinitis", width=700)
 
 # Quiz Section
 st.subheader("Clinical Quiz")
