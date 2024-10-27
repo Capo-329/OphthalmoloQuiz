@@ -2,7 +2,7 @@
 import streamlit as st
 
 # Logo
-st.image("logo-MEb.png",width=100)
+st.image("logo-MEb.png",width=60)
 # App title
 st.title("Ophthalmoloquiz App by Matteo C")
 
@@ -13,8 +13,8 @@ A 28-year-old man presents with progressive vision loss, particularly in low-lig
 """)
 
 # Diagnostic Imaging Findings
-st.image("img1.jpg", caption="Fundus view of the right eye", width=700)
-st.image("img2.jpg", caption="Fluorescein angiogram", width=700)
+st.image("img1.jpg", caption="Fundus view of the right eye", width=200)
+st.image("img2.jpg", caption="Fluorescein angiogram", width=200)
 
 # Quiz Section
 st.subheader("Clinical Quiz")
