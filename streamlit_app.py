@@ -1,71 +1,42 @@
-import streamlit as st
-
 # Import libraries
 import streamlit as st
 
 # App title
-st.title("Clinical Case Study: Toxoplasmic Chorioretinitis")
-
-# Introduction
-st.markdown("""
-### Case Overview
-This case describes a 57-year-old woman with acute acquired toxoplasmic chorioretinitis.
-The following case study will explore her symptoms, diagnosis through advanced imaging techniques, and clinical findings.
-""")
+st.title("Ophthalmoloquiz App by Matteo C")
 
 # Case Presentation
 st.subheader("Case Presentation")
 st.write("""
-A 57-year-old white woman presented with:
-- **Symptoms**: Ocular pain and blurred vision in her left eye.
-- **Visual Acuity**: 20/20 in the right eye, 20/200 in the left eye.
-- **Findings**: Anterior segment of the left eye showed aqueous flare, cells, and keratic precipitates; 
-  fundus exam revealed intense vitritis and focal necrotizing retinochoroiditis above the optic disc.
-- **Diagnosis**: Suspected primary ocular toxoplasmosis, confirmed via positive serology for *Toxoplasma gondii*.
+A 28-year-old man presents with progressive vision loss, particularly in low-light conditions, starting from adolescence. He is diagnosed with gyrate atrophy of the choroid and retina, an autosomal recessive condition associated with elevated serum ornithine. The patient’s high ornithine levels were treated with vitamin B6 (pyridoxine), leading to a significant decrease in serum ornithine.
 """)
 
 # Diagnostic Imaging Findings
-st.subheader("Diagnostic Imaging")
-st.write("""
-The patient underwent swept-source optical coherence tomography (SS-OCT) and optical coherence tomography angiography (OCTA).
-- **SS-OCT Findings**: Retinal and choroidal involvement with swelling and inflammation.
-- **OCTA Findings**: Complete loss of deep and superficial capillary networks in the inflamed area.
-- **Post-Healing Imaging**: Retinal thinning and persistent vascular occlusion noted.
-""")
-
-# Treatment and Outcome
-st.subheader("Treatment and Outcome")
-st.write("""
-The patient received a combination of antibiotics (pyrimethamine and sulfadiazine) and steroids (prednisone).
-- **Outcome**: Inflammation resolved after two months, leaving an atrophic chorioretinal scar. 
-- **Visual Acuity Post-Treatment**: Improved to 20/25 in the affected eye.
-""")
 
 # Quiz Section
 st.subheader("Clinical Quiz")
-st.write("Test your knowledge on this case!")
+st.write("Test your knowledge")
 
 # Quiz Questions
 questions = [
     {
-        "question": "What was the primary symptom that led the patient to seek medical attention?",
-        "options": ["Ocular pain and blurred vision", "Headache", "Dizziness", "Nausea"],
-        "answer": "Ocular pain and blurred vision"
+        "question": "What are the typical early symptoms of gyrate atrophy of the retina and choroid?",
+        "options": ["Gradual vision loss in low-light conditions", "Intense eye pain", "Peripheral field constriction in bright light", "Loss of color vision"],
+        "answer": "Gradual vision loss in low-light conditions"
     },
     {
-        "question": "What imaging technique showed vascular occlusion in the retina?",
-        "options": ["MRI", "CT Scan", "SS-OCT", "OCTA"],
-        "answer": "OCTA"
+        "question": "In this case, what key laboratory finding led to the diagnosis of gyrate atrophy?",
+        "options": ["Elevated plasma ornithine", "High serum creatinine", "Increased retinal pigment deposits", "Abnormal electroretinography"],
+        "answer": "Elevated plasma ornithine"
     },
     {
-        "question": "What organism caused the infection in this case?",
-        "options": ["Toxoplasma gondii", "Cytomegalovirus", "Herpes Simplex Virus", "Staphylococcus aureus"],
-        "answer": "Toxoplasma gondii"
+        "question": "Gyrate atrophy is caused by a deficiency in which enzyme?",
+        "options": ["Tyrosine aminotransferase", "Ornithine aminotransferase (OAT)", "Pyruvate dehydrogenase", "Glutathione reductase"],
+        "answer": "Ornithine aminotransferase (OAT)"
     },
     {
-        "question": "What was the patient's visual acuity in the left eye post-treatment?",
-        "options": ["20/20", "20/25", "20/200", "20/50"],
-        "answer": "20/25"
+        "question": "This patient’s condition showed a response to high-dose vitamin B6. Why might vitamin B6 be effective in this case?",
+        "options": ["It stimulates the production of melanin in the retina", "It serves as a cofactor for the deficient enzyme, ornithine aminotransferase", "It acts as an anti-inflammatory in retinal tissues", "It decreases the permeability of the retinal barrier"],
+        "answer": "It serves as a cofactor for the deficient enzyme, ornithine aminotransferase"
     }
 ]
 
@@ -81,6 +52,8 @@ for i, q in enumerate(questions):
 if st.button("Submit Quiz"):
     st.write(f"Your Score: {score} / {len(questions)}")
     if score == len(questions):
-        st.success("Great job! You understand this case well.")
+        st.success("Great job!")
     else:
         st.info("Review the case details and try again for a better score!")
+ 
+
