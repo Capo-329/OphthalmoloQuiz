@@ -39,7 +39,8 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 # App title
-st.image("logo-MEb.png",width=60) st.title("Ophthalmoloquiz App by Matteo C")
+st.image("logo-MEb.png",width=60) 
+st.title("Ophthalmoloquiz App by Matteo C")
 
 # Case Presentation
 st.subheader("Case Presentation")
