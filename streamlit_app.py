@@ -13,7 +13,7 @@ st.markdown("""
     .titolone {
         display: flex;
         align-items: center;
-        color: white;
+        color: #fff !important;
         background-color: #5995f0;
     }
     .subheader-text {
@@ -46,7 +46,7 @@ st.markdown("""
 # App title
 st.markdown("""
 <div class="titolone">
-    <h1 style="margin: 0; color: #2C3E50;">Ophthalmoloquiz App by Matteo</h1>  <img src="logo-MEb.png" width="60">
+    <h1>Ophthalmoloquiz App by Matteo</h1>  <img src="logo-MEb.png" width="60">
 </div>
 """, unsafe_allow_html=True)
 
