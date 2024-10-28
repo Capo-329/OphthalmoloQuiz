@@ -47,12 +47,12 @@ st.markdown("""
 # App title
 st.markdown(""
 <div style="display: flex; align-items: center;">
-    <h1 style="margin: 0; color: #2C3E50;">Clinical Case Study: Toxoplasmic Chorioretinitis</h1>  <img src="logo-MEb.png" width="60">
+    <h1 style="margin: 0; color: #2C3E50;">Ophthalmoloquiz App by Matteo</h1>  <img src="logo-MEb.png" width="60">
 </div>
 "", unsafe_allow_html=True)
 
 st.image("logo-MEb.png",width=60) 
-st.title("Ophthalmoloquiz App by Matteo C)
+st.title("Ophthalmoloquiz App by Matteo C")
 
 # Case Presentation
 st.subheader("Case Presentation")
