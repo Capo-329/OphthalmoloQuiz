@@ -62,6 +62,33 @@ st.markdown("A 28-year-old man presents with progressive vision loss, particular
 st.image("img1.jpg", caption="Fundus view of the right eye", width=200)
 st.image("img2.jpg", caption="Fluorescein angiogram", width=200)
 
+def display_quiz():
+  score = 0
+  selected_answers = []
+
+  # Show quiz only after clicking "Start Quiz" button
+  if st.button("Start Quiz"):
+    for i, q in enumerate(questions):
+      st.write(f"**Question {i+1}:** {q['question']}")
+      answer = st.radio("", q['options'], key=f"q_{i}")
+      selected_answers.append(answer)
+
+    # Submit button and answer highlighting within the quiz section
+    if st.button("Submit Quiz"):
+      for i, q in enumerate(questions):
+        st.write(f"**Question {i+1}:** {q['question']}")
+        if selected_answers[i] == q['answer']:
+          st.markdown(f"<p style='color:green;'>✔️{selected_answers[i]}</p>", unsafe_allow_html=True)
+        else:
+          st.markdown(f"<p style='color:red;'>❌{selected_answers[i]}</p>", unsafe_allow_html=True)
+      st.write(f"Your Score: {score}/{len(questions)}")
+
+
+# Separate functions for presentation and quiz
+display_case_presentation()
+display_quiz()
+
+
 # Quiz Section
 st.subheader("Clinical Quiz")
 st.write("Test your knowledge")
@@ -89,21 +116,3 @@ questions = [
         "answer": "It serves as a cofactor for the deficient enzyme, ornithine aminotransferase"
     }
 ]
-
-# Display Quiz
-score = 0
-selected_answers = []
-for i, q in enumerate(questions):
-    st.write(f"**Question {i+1}:** {q['question']}")
-    answer = st.radio("", q['options'], key=f"q_{i}")
-    selected_answers.append(answer)
-
-# Display Score and highlight answers
-if st.button("Submit Quiz"):
-    for i, q in enumerate(questions):
-        st.write(f"**Question {i+1}:** {q['question']}")
-        if selected_answers[i] == q['answer']:
-            st.markdown(f"<p style='color:green;'>✔️{selected_answers[i]}</p>", unsafe_allow_html=True)
-        else:
-            st.markdown(f"<p style='color:red;'>❌{selected_answers[i]}</p>", unsafe_allow_html=True)
- 
