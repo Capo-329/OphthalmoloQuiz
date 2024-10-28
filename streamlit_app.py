@@ -6,6 +6,7 @@ st.markdown("""
     <style>
     .stMain {
         background-color: #fff;
+        color: black
     }
     .st-az {
         background-color: #5995f0 ;
