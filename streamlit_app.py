@@ -8,7 +8,7 @@ st.markdown("""
         background-color: #fff;
     }
     .st-az {
-        background-color: ;
+        background-color: #5995f0 ;
     }
     .titolone {
         display: flex;
