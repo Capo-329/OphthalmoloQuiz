@@ -48,7 +48,7 @@ st.markdown("""
 st.image("logo-MEb.png",width=60) 
 st.markdown("""
 <div class="titolone">
-    <h1>Ophthalmoloquiz App by Matteo</h1>
+    <h1 style="color: #5995f0">Ophthalmoloquiz App by Matteo</h1>
 </div>
 """, unsafe_allow_html=True)
 
