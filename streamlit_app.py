@@ -10,7 +10,9 @@ st.markdown("""
     .st-az {
         background-color: #5995f0;
     }
-    .h1 {
+    .titolone {
+        display: flex;
+        align-items: center;
         color: white;
         background-color: #5995f0;
     }
@@ -43,7 +45,7 @@ st.markdown("""
 
 # App title
 st.markdown("""
-<div style="display: flex; align-items: center;">
+<div class="titolone">
     <h1 style="margin: 0; color: #2C3E50;">Ophthalmoloquiz App by Matteo</h1>  <img src="logo-MEb.png" width="60">
 </div>
 """, unsafe_allow_html=True)
