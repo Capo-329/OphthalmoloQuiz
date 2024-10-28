@@ -44,14 +44,14 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 # App title
+st.image("logo-MEb.png",width=60) 
 st.markdown("""
 <div class="titolone">
-    <h1>Ophthalmoloquiz App by Matteo</h1>  <img src="logo-MEb.png" width="60">
+    <h1>Ophthalmoloquiz App by Matteo</h1>
 </div>
 """, unsafe_allow_html=True)
 
-st.image("logo-MEb.png",width=60) 
-st.title("Ophthalmoloquiz App by Matteo C")
+
 
 # Case Presentation
 st.subheader("Case Presentation")
