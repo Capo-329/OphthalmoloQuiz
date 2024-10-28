@@ -13,8 +13,10 @@ st.markdown("""
     .titolone {
         display: flex;
         align-items: center;
-        color: #5995f0;
     }
+    .h1 {
+        color: #5995f0;
+        }
     .subheader-text {
         color: #5995f0;
         font-size: 26px;
