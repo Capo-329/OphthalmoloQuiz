@@ -5,11 +5,17 @@ import streamlit as st
 st.markdown("""
     <style>
     .main {
-        background-color: #fff;
+        background-color: #5995f0;
+        font-family:'Poppins';
+    }
+    div[role="radiogroup"] label > div[data-testid="stMarkdownContainer"] > p {
+        color: #2980B9; /* blue color */
+    }
+    div[role="radiogroup"] input[type="radio"] {
+        accent-color: #2980B9; /* Change radio button color in compatible browsers */
     }
     .title-text {
         color: #2C3E50;
-        font-family: 'Poppins';
     }
     .subheader-text {
         color: #2980B9;
@@ -40,7 +46,7 @@ st.markdown("""
 
 # App title
 st.image("logo-MEb.png",width=60) 
-st.title("Ophthalmoloquiz App by Matteo C")
+st.title("Ophthalmoloquiz App by Matteo C  <img src="logo-MEb.png" width="60">")
 
 # Case Presentation
 st.subheader("Case Presentation")
