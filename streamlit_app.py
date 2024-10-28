@@ -6,7 +6,6 @@ st.markdown("""
     <style>
     .stMain {
         background-color: #fff;
-        font-family:"Poppins";
     }
     div[role="radiogroup"] label > div[data-testid="stMarkdownContainer"] > p {
         color: #5995f0; /* blue color */
@@ -18,7 +17,7 @@ st.markdown("""
         color: #5995f0;
     }
     .subheader-text {
-        color: #2980B9;
+        color: #5995f0;
         font-size: 26px;
     }
     .section-text {
@@ -27,17 +26,17 @@ st.markdown("""
         margin-top: 20px;
     }
     .quiz-section {
-        background-color: #E8F8FF;
+        background-color: #fff;
         padding: 20px;
         border-radius: 10px;
     }
     .score-text {
-        color: #2980B9;
+        color: #5995f0;
         font-size: 24px;
         font-weight: bold;
     }
     .divider {
-        height: 2px;
+        height: 5px;
         background-color: #5995f0;
         margin: 20px 0;
     }
