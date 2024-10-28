@@ -4,7 +4,7 @@ import streamlit as st
 # Add custom CSS for styling
 st.markdown("""
     <style>
-    .main {
+    .stMain {
         background-color: #5995f0;
         font-family:'Poppins';
     }
