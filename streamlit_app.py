@@ -8,13 +8,12 @@ st.markdown("""
         background-color: #fff;
     }
     .st-az {
-        background-color: #5995f0;
+        background-color: ;
     }
     .titolone {
         display: flex;
         align-items: center;
-        color: #fff !important;
-        background-color: #5995f0;
+        color: #5995f0;
     }
     .subheader-text {
         color: #5995f0;
