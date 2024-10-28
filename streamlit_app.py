@@ -14,7 +14,7 @@ st.markdown("""
         accent-color: #5995f0; /* Change radio button color in compatible browsers */
     }
     .title-text {
-        color: #5995f0;
+        color: blue;
     }
     .subheader-text {
         color: #5995f0;
