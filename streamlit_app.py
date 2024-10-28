@@ -5,17 +5,17 @@ import streamlit as st
 st.markdown("""
     <style>
     .stMain {
-        background-color: #5995f0;
-        font-family:'Poppins';
+        background-color: #fff;
+        font-family:"Poppins";
     }
     div[role="radiogroup"] label > div[data-testid="stMarkdownContainer"] > p {
-        color: #2980B9; /* blue color */
+        color: #5995f0; /* blue color */
     }
     div[role="radiogroup"] input[type="radio"] {
-        accent-color: #2980B9; /* Change radio button color in compatible browsers */
+        accent-color: #5995f0; /* Change radio button color in compatible browsers */
     }
     .title-text {
-        color: #2C3E50;
+        color: #5995f0;
     }
     .subheader-text {
         color: #2980B9;
@@ -73,6 +73,7 @@ questions = [
         "options": ["Gradual vision loss in low-light conditions", "Intense eye pain", "Peripheral field constriction in bright light", "Loss of color vision"],
         "answer": "Gradual vision loss in low-light conditions"
     },
+st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
     {
         "question": "In this case, what key laboratory finding led to the diagnosis of gyrate atrophy?",
         "options": ["Elevated plasma ornithine", "High serum creatinine", "Increased retinal pigment deposits", "Abnormal electroretinography"],
