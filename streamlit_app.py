@@ -102,7 +102,7 @@ if st.button("Submit Quiz"):
     for i, q in enumerate(questions):
         st.write(f"**Question {i+1}:** {q['question']}")
         if selected_answers[i] == q['answer']:
-            st.markdown(f"<p style='color:green;'>{selected_answers[i]}</p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='color:green;'>✔️{selected_answers[i]}</p>", unsafe_allow_html=True)
         else:
-            st.markdown(f"<p style='color:red;'>{selected_answers[i]}</p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='color:red;'>❌{selected_answers[i]}</p>", unsafe_allow_html=True)
  
