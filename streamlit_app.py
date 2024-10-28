@@ -69,7 +69,7 @@ st.write("Test your knowledge")
 # Quiz Questions
 questions = [
     {
-        "question": "What are the typical early symptoms of gyrate atrophy of the retina and choroid?<div class="divider"></div>",
+        "question": "What are the typical early symptoms of gyrate atrophy of the retina and choroid?",
         "options": ["Gradual vision loss in low-light conditions", "Intense eye pain", "Peripheral field constriction in bright light", "Loss of color vision"],
         "answer": "Gradual vision loss in low-light conditions"
     },
