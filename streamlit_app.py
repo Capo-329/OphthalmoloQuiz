@@ -38,7 +38,7 @@ st.markdown("""
     }
     .divider {
         height: 2px;
-        background-color: #2980B9;
+        background-color: #5995f0;
         margin: 20px 0;
     }
     </style>
@@ -97,6 +97,8 @@ for i, q in enumerate(questions):
     answer = st.radio("", q['options'], key=f"q_{i}")
     if answer == q['answer']:
         score += 1
+    # Add divider after each question
+    st.divider()  # Use the built-in st.divider function
 
 # Display Score
 if st.button("Submit Quiz"):
@@ -105,8 +107,4 @@ if st.button("Submit Quiz"):
         st.success("Great job!")
     else:
         st.info("Review the case details and try again for a better score!")
-
-    
-    # Add divider after each question
-    st.markdown("<hr>", unsafe_allow_html=True)
  
