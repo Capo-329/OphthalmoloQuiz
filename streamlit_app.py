@@ -7,11 +7,8 @@ st.markdown("""
     .stMain {
         background-color: #fff;
     }
-    div[role="radiogroup"] label > div[data-testid="stMarkdownContainer"] > p {
-        color: #5995f0; /* blue color */
-    }
-    div[role="radiogroup"] input[type="radio"] {
-        accent-color: #5995f0; /* Change radio button color in compatible browsers */
+    .st-az {
+        background-color: #5995f0;
     }
     .title-text {
         color: blue;
