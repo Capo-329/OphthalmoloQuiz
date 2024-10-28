@@ -1,32 +1,36 @@
-from kivy.app import App
-from kivy.uix.boxlayout import BoxLayout
-from kivy.uix.button import Button
-from kivy.uix.image import Image
-from kivy.uix.label import Label
-from kivy.uix.radiobutton import RadioButton
-from kivy.uix.screenmanager import Screen, ScreenManager
+import streamlit as st
 
-class IntroductionScreen(Screen):
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
-        # ... layout for introduction text, image, and start button
+def main():
+    st.title("Quizzone")
 
-class QuestionScreen(Screen):
-    def __init__(self, question_num, **kwargs):
-        super().__init__(**kwargs)
-        # ... layout for question text, radio buttons, and continue button
+    # Introduction Screen
+    st.write("Welcome to Quizzone!")
+    st.image("intro_image.jpg")  # Replace with your image path
+    if st.button("Start Quiz"):
+        question_1()
 
-class QuizApp(App):
-    def build(self):
-        sm = ScreenManager()
-        sm.add_widget(IntroductionScreen(name='intro'))
-        sm.add_widget(QuestionScreen(question_num=1, name='question1'))
-        # ... add more QuestionScreen instances for subsequent questions
+def question_1():
+    st.write("Question 1:")
+    st.write("Placeholder Question Text")
 
-        return sm
+    # Create radio button options
+    options = ["Option A", "Option B", "Option C", "Option D"]
+    selected_option = st.radio("Select your answer:", options)
 
-if __name__ == '__main__':
-    QuizApp().run()
+    # Check the answer and provide feedback
+    if st.button("Submit"):
+        if selected_option == "Correct Answer":  # Replace with the correct answer
+            st.success("Correct!")
+        else:
+            st.error("Incorrect. Please try again.")
+
+    if st.button("Continue"):
+        question_2()
+
+def question_2():
+    # Similar structure to question_1
+    # ...
+
+# Run the app
 if __name__ == "__main__":
-    app = QuizzoneApp()
-    app.mainloop()
+    main()
