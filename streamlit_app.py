@@ -105,4 +105,7 @@ if st.button("Submit Quiz"):
         st.success("Great job!")
     else:
         st.info("Review the case details and try again for a better score!")
+
+ # Add divider after each question
+ st.markdown("<hr>", unsafe_allow_html=True)
  
