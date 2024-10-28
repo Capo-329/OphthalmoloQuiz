@@ -91,19 +91,18 @@ questions = [
 
 # Display Quiz
 score = 0
+selected_answers = []
 for i, q in enumerate(questions):
     st.write(f"**Question {i+1}:** {q['question']}")
     answer = st.radio("", q['options'], key=f"q_{i}")
-    if answer == q['answer']:
-        score += 1
-    # Add divider after each question
-    st.divider()  # Use the built-in st.divider function
+    selected_answers.append(answer)
 
-# Display Score
+# Display Score and highlight answers
 if st.button("Submit Quiz"):
-    st.write(f"Your Score: {score} / {len(questions)}")
-    if score == len(questions):
-        st.success("Great job!")
-    else:
-        st.info("Review the case details and try again for a better score!")
+    for i, q in enumerate(questions):
+        st.write(f"**Question {i+1}:** {q['question']}")
+        if selected_answers[i] == q['answer']:
+            st.markdown(f"<p style='color:green;'>{selected_answers[i]}</p>", unsafe_allow_html=True)
+        else:
+            st.markdown(f"<p style='color:red;'>{selected_answers[i]}</p>", unsafe_allow_html=True)
  
