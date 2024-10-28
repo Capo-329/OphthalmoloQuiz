@@ -1,118 +1,82 @@
-# Import libraries
-import streamlit as st
+import tkinter as tk
 
-# Add custom CSS for styling
-st.markdown("""
-    <style>
-    .stMain {
-        background-color: #fff;
-    }
-    .st-az {
-        background-color: ;
-    }
-    .titolone {
-        display: flex;
-        align-items: center;
-    }
-    .h1 {
-        color: #5995f0;
-        }
-    .subheader-text {
-        color: #5995f0;
-        font-size: 26px;
-    }
-    .section-text {
-        color: #2C3E50;
-        font-size: 18px;
-        margin-top: 20px;
-    }
-    .quiz-section {
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 10px;
-    }
-    .score-text {
-        color: #5995f0;
-        font-size: 24px;
-        font-weight: bold;
-    }
-    .divider {
-        height: 5px;
-        background-color: #5995f0;
-        margin: 20px 0;
-    }
-    </style>
-    """, unsafe_allow_html=True)
+class QuizzoneApp(tk.Tk):
+    def __init__(self):
+        super().__init__()
+        self.title("Quizzone")
+        self.geometry("400x300")
 
-# App title
-st.image("logo-MEb.png",width=60) 
-st.markdown("""
-<div class="titolone">
-    <h1>Ophthalmoloquiz App by Matteo</h1>
-</div>
-""", unsafe_allow_html=True)
+        # Introduction screen
+        self.intro_frame = tk.Frame(self)
+        self.intro_label = tk.Label(self.intro_frame, text="Welcome to Quizzone!")
+        self.intro_image = tk.PhotoImage(file="quizzone_logo.png")  # Replace with your image path
+        self.intro_image_label = tk.Label(self.intro_frame, image=self.intro_image)
+        self.start_button = tk.Button(self.intro_frame, text="Start Quiz", command=self.start_quiz)
 
+        self.intro_label.pack(pady=20)
+        self.intro_image_label.pack()
+        self.start_button.pack(pady=20)
+        self.intro_frame.pack(fill="both", expand=True)
 
+        # Question screen
+        self.question_frame = tk.Frame(self)
+        self.question_label = tk.Label(self.question_frame, text="Question 1: Placeholder Question")
+        self.answer_var = tk.StringVar()
+        self.answer_options = [
+            ("Option A", "A"),
+            ("Option B", "B"),
+            ("Option C", "C"),
+            ("Option D", "D")
+        ]
+        self.answer_buttons = []
+        for text, value in self.answer_options:
+            button = tk.Radiobutton(self.question_frame, text=text, variable=self.answer_var, value=value)
+            button.pack(anchor="w")
+            self.answer_buttons.append(button)
+        self.feedback_label = tk.Label(self.question_frame, text="")
+        self.next_button = tk.Button(self.question_frame, text="Next", state="disabled", command=self.next_question)
 
-# Case Presentation
-st.subheader("Case Presentation")
-st.markdown("A 28-year-old man presents with progressive vision loss, particularly in low-light conditions, starting from adolescence. He is diagnosed with gyrate atrophy of the choroid and retina, an autosomal recessive condition associated with elevated serum ornithine. The patient'high ornithine levels were treated with vitamin B6 (pyridoxine), leading to a significant decrease in serum ornithine.")
+        # Hide question frame initially
+        self.question_frame.pack_forget()
 
-# Diagnostic Imaging Findings
-st.image("img1.jpg", caption="Fundus view of the right eye", width=200)
-st.image("img2.jpg", caption="Fluorescein angiogram", width=200)
+    def start_quiz(self):
+        self.intro_frame.pack_forget()
+        self.question_frame.pack(fill="both", expand=True)
+        self.show_question(0)  # Start with question 0
 
-def display_quiz():
-  score = 0
-  selected_answers = []
+    def show_question(self, question_index):
+        # Update question and answer options
+        self.question_label.config(text=f"Question {question_index+1}: Placeholder Question {question_index+1}")
+        for i, (text, value) in enumerate(self.answer_options):
+            self.answer_buttons[i].config(text=text, value=value)
 
-  # Show quiz only after clicking "Start Quiz" button
-  if st.button("Start Quiz"):
-    for i, q in enumerate(questions):
-      st.write(f"**Question {i+1}:** {q['question']}")
-      answer = st.radio("", q['options'], key=f"q_{i}")
-      selected_answers.append(answer)
+        # Enable answer buttons and disable next button
+        for button in self.answer_buttons:
+            button.config(state="normal")
+        self.next_button.config(state="disabled")
 
-    # Submit button and answer highlighting within the quiz section
-    if st.button("Submit Quiz"):
-      for i, q in enumerate(questions):
-        st.write(f"**Question {i+1}:** {q['question']}")
-        if selected_answers[i] == q['answer']:
-          st.markdown(f"<p style='color:green;'>✔️{selected_answers[i]}</p>", unsafe_allow_html=True)
+    def check_answer(self):
+        # Check if the selected answer is correct
+        correct_answer = "A"  # Replace with the actual correct answer
+        if self.answer_var.get() == correct_answer:
+            self.feedback_label.config(text="Correct!", fg="green")
         else:
-          st.markdown(f"<p style='color:red;'>❌{selected_answers[i]}</p>", unsafe_allow_html=True)
-      st.write(f"Your Score: {score}/{len(questions)}")
+            self.feedback_label.config(text="Incorrect. The correct answer is A.", fg="red")
+        self.next_button.config(state="normal")
 
+    def next_question(self):
+        # Disable answer buttons
+        for button in self.answer_buttons:
+            button.config(state="disabled")
+        self.feedback_label.config(text="")
 
-# Separate functions for presentation and quiz
-display_case_presentation()
-display_quiz()
+        # Show the next question or end the quiz
+        if question_index < len(questions) - 1:
+            self.show_question(question_index + 1)
+        else:
+            # End the quiz, display a final score or message
+            pass
 
-
-# Quiz Section
-st.subheader("Clinical Quiz")
-st.write("Test your knowledge")
-
-# Quiz Questions
-questions = [
-    {
-        "question": "What are the typical early symptoms of gyrate atrophy of the retina and choroid?",
-        "options": ["Gradual vision loss in low-light conditions", "Intense eye pain", "Peripheral field constriction in bright light", "Loss of color vision"],
-        "answer": "Gradual vision loss in low-light conditions"
-    },
-    {
-        "question": "In this case, what key laboratory finding led to the diagnosis of gyrate atrophy?",
-        "options": ["Elevated plasma ornithine", "High serum creatinine", "Increased retinal pigment deposits", "Abnormal electroretinography"],
-        "answer": "Elevated plasma ornithine"
-    },
-    {
-        "question": "Gyrate atrophy is caused by a deficiency in which enzyme?",
-        "options": ["Tyrosine aminotransferase", "Ornithine aminotransferase (OAT)", "Pyruvate dehydrogenase", "Glutathione reductase"],
-        "answer": "Ornithine aminotransferase (OAT)"
-    },
-    {
-        "question": "This patient’s condition showed a response to high-dose vitamin B6. Why might vitamin B6 be effective in this case?",
-        "options": ["It stimulates the production of melanin in the retina", "It serves as a cofactor for the deficient enzyme, ornithine aminotransferase", "It acts as an anti-inflammatory in retinal tissues", "It decreases the permeability of the retinal barrier"],
-        "answer": "It serves as a cofactor for the deficient enzyme, ornithine aminotransferase"
-    }
-]
+if __name__ == "__main__":
+    app = QuizzoneApp()
+    app.mainloop()
