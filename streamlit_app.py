@@ -56,7 +56,7 @@ st.title("Ophthalmoloquiz App by Matteo C")
 
 # Case Presentation
 st.subheader("Case Presentation")
-st.write(""
+st.markdown(""
 A 28-year-old man presents with progressive vision loss, particularly in low-light conditions, starting from adolescence. He is diagnosed with gyrate atrophy of the choroid and retina, an autosomal recessive condition associated with elevated serum ornithine. The patient’s high ornithine levels were treated with vitamin B6 (pyridoxine), leading to a significant decrease in serum ornithine.
 "")
 
