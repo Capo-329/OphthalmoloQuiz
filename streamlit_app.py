@@ -3,6 +3,14 @@ import streamlit as st
 def main():
     st.title("Quizzone")
 
+# App title
+st.image("logo-MEb.png",width=60) 
+st.markdown("""
+<div class="titolone">
+    <h1>Ophthalmoloquiz App by Matteo</h1>
+</div>
+""", unsafe_allow_html=True)
+    
     # Introduction Screen
     st.write("Welcome to Quizzone!")
     st.image("intro_image.jpg")  # Replace with your image path
