@@ -10,8 +10,9 @@ st.markdown("""
     .st-az {
         background-color: #5995f0;
     }
-    .title-text {
-        color: blue;
+    .h1 {
+        color: white;
+        background-color: #5995f0;
     }
     .subheader-text {
         color: #5995f0;
