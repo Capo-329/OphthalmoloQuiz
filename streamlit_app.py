@@ -13,13 +13,13 @@ st.markdown("""
     .titolone {
         display: flex;
         align-items: center;
+        background-color: #5995f0;
     }
     .h1 {
         color: #5995f0;
         }
     .subheader-text {
         color: #5995f0;
-        font-size: 26px;
     }
     .section-text {
         color: #2C3E50;
@@ -48,7 +48,7 @@ st.markdown("""
 st.image("logo-MEb.png",width=60) 
 st.markdown("""
 <div class="titolone">
-    <h1 style="color: #5995f0">Ophthalmoloquiz App by Matteo</h1>
+    <h1 style="color: #fff">Ophthalmoloquiz App by Matteo</h1>
 </div>
 """, unsafe_allow_html=True)
 
