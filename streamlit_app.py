@@ -32,5 +32,5 @@ def question_2():
     # ...
 
 # Run the app
-if __name__ == "__main__":
+ if __name__ == "__main__":
     main()
