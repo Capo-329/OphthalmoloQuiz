@@ -69,11 +69,10 @@ st.write("Test your knowledge")
 # Quiz Questions
 questions = [
     {
-        "question": "What are the typical early symptoms of gyrate atrophy of the retina and choroid?",
+        "question": "What are the typical early symptoms of gyrate atrophy of the retina and choroid?<div class="divider"></div>",
         "options": ["Gradual vision loss in low-light conditions", "Intense eye pain", "Peripheral field constriction in bright light", "Loss of color vision"],
         "answer": "Gradual vision loss in low-light conditions"
     },
-st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
     {
         "question": "In this case, what key laboratory finding led to the diagnosis of gyrate atrophy?",
         "options": ["Elevated plasma ornithine", "High serum creatinine", "Increased retinal pigment deposits", "Abnormal electroretinography"],
