@@ -1,10 +1,45 @@
 # Import libraries
 import streamlit as st
 
-# Logo
-st.image("logo-MEb.png",width=60)
+# Add custom CSS for styling
+st.markdown("""
+    <style>
+    .main {
+        background-color: #fff;
+    }
+    .title-text {
+        color: #2C3E50;
+        font-family: 'Poppins';
+    }
+    .subheader-text {
+        color: #2980B9;
+        font-size: 26px;
+    }
+    .section-text {
+        color: #2C3E50;
+        font-size: 18px;
+        margin-top: 20px;
+    }
+    .quiz-section {
+        background-color: #E8F8FF;
+        padding: 20px;
+        border-radius: 10px;
+    }
+    .score-text {
+        color: #2980B9;
+        font-size: 24px;
+        font-weight: bold;
+    }
+    .divider {
+        height: 2px;
+        background-color: #2980B9;
+        margin: 20px 0;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
 # App title
-st.title("Ophthalmoloquiz App by Matteo C")
+st.image("logo-MEb.png",width=60) st.title("Ophthalmoloquiz App by Matteo C")
 
 # Case Presentation
 st.subheader("Case Presentation")
